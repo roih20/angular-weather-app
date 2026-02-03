@@ -1,0 +1,18 @@
+export enum WeatherCondition {
+  OVERCAST = 'Overcast',
+  PARTLY_CLOUDY = 'Partly cloudy',
+  PARTLY_CLOUDY_2 = 'Partly Cloudy',
+  CLOUDY = 'Cloudy',
+  CLEAR = 'Clear',
+  SUNNY = 'Sunny',
+  MIST = 'Mist',
+  RAINY = 'Patchy rain nearby',
+  MODERATE_RAIN = 'Moderate rain',
+  LIGHT_RAIN = 'Light rain',
+  SNOWY = 'Patchy moderate snow',
+  HEAVY_SNOW = 'Heavy snow',
+  FREEZING_RAIN = 'Light freezing rain',
+  FREEZING_FOG = 'Freezing fog',
+  THUNDER_STORM = 'Thundery outbreaks in nearby',
+  MODERATE_SNOW = 'Moderate snow',
+}

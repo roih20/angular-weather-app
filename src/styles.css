@@ -1,3 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-dark-blue: #030712;
+  --color-primary-light: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.home-max-height {
+  max-height: calc(100vh - 94px);
+}
+
+.city-weather-max-h {
+  max-height: calc(100vh - 204px);
+}
