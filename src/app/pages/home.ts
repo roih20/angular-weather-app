@@ -72,38 +72,59 @@ export class HomePage implements OnInit {
   }
 
   loadCurrentWeather() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          this.weatherService.getCurrentWeatherByCoordinates(latitude, longitude).subscribe({
-            next: (data) => {
-              console.log('Current weather data:', data);
-              this.currentLocation.set(data.location.name);
-              this.currentTemperature.set(Math.ceil(data.current.temp_f));
-              this.hourlyForecast.set(data.forecast.forecastday[0].hour);
-              this.dailyForecast.set(data.forecast.forecastday);
-              this.feelsLikeTemperature.set(Math.ceil(data.current.feelslike_f));
-              this.uvIndex.set(Math.ceil(data.current.uv));
-              this.viewDistance.set(Math.ceil(data.current.vis_miles));
-              this.humidityLevel.set(Math.ceil(data.current.humidity));
-              this.dewpointDegree.set(Math.ceil(data.current.dewpoint_f));
-              this.wind.set({
-                wind_degree: Math.ceil(data.current.wind_degree),
-                wind_dir: data.current.wind_dir,
-                wind_mph: Math.ceil(data.current.wind_mph),
-                gust_mph: Math.ceil(data.current.gust_mph),
-              });
-            },
-            error: (error) => {
-              console.error('Error fetching weather data:', error);
-            },
-          });
-        },
-        (error) => {
-          console.error('Error getting location', error);
-        },
-      );
-    }
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        this.weatherService.getCurrentWeatherByCoordinates(latitude, longitude).subscribe({
+          next: (data) => {
+            console.log('Current weather data:', data);
+            this.currentLocation.set(data.location.name);
+            this.currentTemperature.set(Math.ceil(data.current.temp_f));
+            this.hourlyForecast.set(data.forecast.forecastday[0].hour);
+            this.dailyForecast.set(data.forecast.forecastday);
+            this.feelsLikeTemperature.set(Math.ceil(data.current.feelslike_f));
+            this.uvIndex.set(Math.ceil(data.current.uv));
+            this.viewDistance.set(Math.ceil(data.current.vis_miles));
+            this.humidityLevel.set(Math.ceil(data.current.humidity));
+            this.dewpointDegree.set(Math.ceil(data.current.dewpoint_f));
+            this.wind.set({
+              wind_degree: Math.ceil(data.current.wind_degree),
+              wind_dir: data.current.wind_dir,
+              wind_mph: Math.ceil(data.current.wind_mph),
+              gust_mph: Math.ceil(data.current.gust_mph),
+            });
+          },
+          error: (error) => {
+            console.error('Error fetching weather data:', error);
+          },
+        });
+      },
+      (error) => {
+        //Fallback
+        console.error('Error getting location', error);
+        this.weatherService.getCurrentWeatherByCity('Los Angeles').subscribe({
+          next: (data) => {
+            this.currentLocation.set(data.location.name);
+            this.currentTemperature.set(Math.ceil(data.current.temp_f));
+            this.hourlyForecast.set(data.forecast.forecastday[0].hour);
+            this.dailyForecast.set(data.forecast.forecastday);
+            this.feelsLikeTemperature.set(Math.ceil(data.current.feelslike_f));
+            this.uvIndex.set(Math.ceil(data.current.uv));
+            this.viewDistance.set(Math.ceil(data.current.vis_miles));
+            this.humidityLevel.set(Math.ceil(data.current.humidity));
+            this.dewpointDegree.set(Math.ceil(data.current.dewpoint_f));
+            this.wind.set({
+              wind_degree: Math.ceil(data.current.wind_degree),
+              wind_dir: data.current.wind_dir,
+              wind_mph: Math.ceil(data.current.wind_mph),
+              gust_mph: Math.ceil(data.current.gust_mph),
+            });
+          },
+          error: (error) => {
+            console.error('Error fetching weather data', error);
+          },
+        });
+      },
+    );
   }
 }

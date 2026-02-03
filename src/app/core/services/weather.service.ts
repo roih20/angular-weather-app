@@ -10,8 +10,10 @@ import { City, WeatherData } from '../../shared/types/types';
 export class WeatherService {
   private http = inject(HttpClient);
 
-  getCurrentWeatherByCity(city: String) {
-    return this.http.get(`${environment.apiUrl}/current.json?q=${city}`);
+  getCurrentWeatherByCity(city: String): Observable<WeatherData> {
+    return this.http.get<WeatherData>(
+      `${environment.apiUrl}/forecast.json?q=${city}&days=10&aqi=no&alerts=no`,
+    );
   }
 
   getCurrentWeatherByCoordinates(lat: number, lon: number): Observable<WeatherData> {
