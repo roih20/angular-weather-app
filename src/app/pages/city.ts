@@ -13,7 +13,7 @@ import { AddIcon } from '../assets/icons/add-icon';
   selector: 'app-city',
   template: `
     @if (showAddButton()) {
-      <div class="flex items-center mx-4 mt-8 flex-row-reverse lg:m-0">
+      <div class="flex items-center mx-4 mt-6 flex-row-reverse lg:m-0">
         <button
           type="button"
           class="dark:bg-gray-800 p-3 bg-white rounded-full cursor-pointer hover:bg-gray-900"
@@ -40,7 +40,7 @@ import { AddIcon } from '../assets/icons/add-icon';
     </div>
   `,
   host: {
-    class: 'overflow-y-auto home-max-height lg:min-h-screen lg:p-4 lg:w-full',
+    class: 'overflow-y-auto h-140  lg:min-h-screen lg:p-4 lg:w-full',
   },
   imports: [
     RealTimeWeather,

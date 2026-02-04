@@ -6,7 +6,7 @@ import { ClockIcon } from '../../assets/icons/clock-icon';
 @Component({
   selector: 'hourly-forecast-container',
   template: `
-    <div class="dark:bg-gray-900 bg-white mx-4 mt-18 rounded-xl p-3 sm:mx-6 lg:mx-0">
+    <div class="dark:bg-gray-900 bg-white mx-4 mt-12 rounded-xl p-3 sm:mx-6 lg:mx-0">
       <h3
         class="dark:text-gray-400 text-slate-800 font-medium mb-2 text-sm flex items-center gap-x-1"
       >

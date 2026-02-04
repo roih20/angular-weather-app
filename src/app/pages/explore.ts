@@ -18,7 +18,7 @@ import { CityService } from '../core/services/city.service';
         class="absolute z-10 dark:bg-dark-blue bg-primary-light w-full h-full"
       ></city-result-overlay>
     }
-    <div class="overflow-y-auto mt-3 city-weather-max-h">
+    <div class="overflow-y-auto mt-3 flex flex-col gap-y-3 h-120 sm:h-204 lg:h-224 xl:h-212">
       @for (savedCity of savedCities; track savedCity) {
         <city-weather-card [cityId]="savedCity"></city-weather-card>
       } @empty {
@@ -27,7 +27,7 @@ import { CityService } from '../core/services/city.service';
     </div>
   `,
   host: {
-    class: 'relative lg:min-h-screen lg:w-full',
+    class: 'relative lg:w-full',
   },
   imports: [SearchBar, CityWeatherCard, CityResultOverlay],
 })

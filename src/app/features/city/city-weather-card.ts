@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   template: `
     <a
       [routerLink]="['/explore', cityId()]"
-      class="dark:text-slate-200 dark:bg-gray-900 bg-white block rounded-2xl mx-4 my-4 px-4 py-2.5 sm:mx-6"
+      class="dark:text-slate-200 dark:bg-gray-900 bg-white block rounded-2xl mx-4 px-4 py-2.5 sm:mx-6"
     >
       <div class="flex">
         <div class="flex-1">

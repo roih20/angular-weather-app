@@ -8,7 +8,7 @@ import { SearchIcon } from '../../assets/icons/search-icon';
   selector: 'navbar',
   template: `
     <nav
-      class="dark:text-slate-300 dark:bg-gray-900 bg-white font-medium px-5 py-3 flex items-center justify-between rounded-xl lg:flex-col lg:h-full lg:justify-around"
+      class="dark:text-slate-300 dark:bg-gray-900 bg-white font-medium px-5 py-3 flex items-center justify-between rounded-xl lg:flex-col lg:h-full lg:justify-around "
     >
       <a routerLink="/" class="flex flex-col items-center space-y-1">
         <svg home-icon class="w-5 h-5"></svg>

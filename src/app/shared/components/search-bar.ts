@@ -5,7 +5,7 @@ import { SearchIcon } from '../../assets/icons/search-icon';
   selector: 'search-bar',
   template: `
     <div
-      class="dark:bg-gray-800 bg-white mx-4 mt-12 px-4 py-2 rounded-full flex items-center gap-x-1 sm:mx-6"
+      class="dark:bg-gray-800 bg-white mx-4 mt-6 px-4 py-2 rounded-full flex items-center gap-x-1 sm:mx-6 xl:mt-0"
     >
       <svg search-icon class="w-5.5 h-5.5 dark:text-slate-200"></svg>
       <input

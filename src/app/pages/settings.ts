@@ -5,9 +5,7 @@ import { ThemeBtn } from '../shared/components/theme-btn';
 @Component({
   selector: 'app-settings',
   template: `
-    <h1 class="dark:text-slate-300 font-semibold text-xl mt-14 text-center sm:text-2xl">
-      Settings
-    </h1>
+    <h1 class="dark:text-slate-300 font-semibold text-xl mt-8 text-center sm:text-2xl">Settings</h1>
     <h2 class="dark:text-gray-400 font-semibold text-lg mt-6 ml-5 sm:ml-7 sm:text-xl">Units</h2>
     <div class="dark:bg-gray-900 bg-white mx-4 p-3 rounded-xl mt-2.5 sm:mx-6">
       <h3 class=" dark:text-gray-400 font-medium sm:text-lg">Temperature</h3>
@@ -67,7 +65,7 @@ import { ThemeBtn } from '../shared/components/theme-btn';
   `,
   imports: [UnitsBtn, ThemeBtn],
   host: {
-    class: 'lg:min-h-screen lg:w-full',
+    class: 'overflow-y-auto h-140 lg:min-h-screen lg:w-full',
   },
 })
 export class SettingsPage {

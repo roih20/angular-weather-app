@@ -33,7 +33,7 @@ import { AdditionalWeatherInformation } from '../shared/components/additional-we
     </div>
   `,
   host: {
-    class: 'overflow-y-auto home-max-height lg:min-h-screen lg:p-4 lg:w-full',
+    class: 'overflow-y-auto h-140 lg:p-4 lg:w-full xl:py-0',
   },
   imports: [
     RealTimeWeather,
