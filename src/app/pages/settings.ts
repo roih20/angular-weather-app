@@ -65,7 +65,7 @@ import { ThemeBtn } from '../shared/components/theme-btn';
   `,
   imports: [UnitsBtn, ThemeBtn],
   host: {
-    class: 'overflow-y-auto h-140 lg:min-h-screen lg:w-full',
+    class: 'overflow-y-auto h-140 sm:h-170 md:h-200 lg:h-full lg:w-full',
   },
 })
 export class SettingsPage {

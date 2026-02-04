@@ -40,7 +40,7 @@ import { AddIcon } from '../assets/icons/add-icon';
     </div>
   `,
   host: {
-    class: 'overflow-y-auto h-140  lg:min-h-screen lg:p-4 lg:w-full',
+    class: 'overflow-y-auto h-140 sm:h-170 md:h-200 lg:h-full lg:p-4 lg:w-full',
   },
   imports: [
     RealTimeWeather,
